@@ -28,12 +28,12 @@
         }
     },
     "extra": {
-     "laravel": {
-        "providers": [
-          "Lmacroseso\\Enzona\\EnzonaServiceProvider"
-        ]
-      }
-    }
+        "laravel": {
+            "providers": [
+                "Lmacroseso\\Enzona\\EnzonaServiceProvider"
+            ]
+        }
+    },
     "scripts": {
         "post-install-cmd": [
             "echo 'Paquete Lmacroseso/enzona instalado correctamente.'"
