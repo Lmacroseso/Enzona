@@ -8,10 +8,9 @@ class RefundPayment
 {
     private $accessToken;
     private $usedHost;
-    private $apiRoute;
     private $refundRoute = "refund"; // Ruta para reembolsar un pago
 
-    public function __construct($accessToken, $usedHost, $apiRoute)
+    public function __construct($accessToken, $usedHost)
     {
         $this->accessToken = $accessToken;
         $this->usedHost = $usedHost;
@@ -20,7 +19,7 @@ class RefundPayment
 
     public function refund($uuid, $amount)
     {
-        $uri = "{$this->usedHost}{$this->apiRoute}/{$uuid}/{$this->refundRoute}";
+        $uri = "{$this->usedHost}/{$uuid}/{$this->refundRoute}";
 
         // Datos del reembolso
         $data = [
