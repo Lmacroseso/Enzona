@@ -11,7 +11,7 @@ class CancelPayment
     private $apiRoute;
     private $cancelRoute = "cancel"; // Asegúrate de definir la ruta correcta
 
-    public function __construct($accessToken, $usedHost, $apiRoute)
+    public function __construct($accessToken, $usedHost)
     {
         $this->accessToken = $accessToken;
         $this->usedHost = $usedHost;
@@ -20,7 +20,7 @@ class CancelPayment
 
     public function cancel($uuid)
     {
-        $uri = "{$this->usedHost}{$this->apiRoute}/{$uuid}/{$this->cancelRoute}";
+        $uri = "{$this->usedHost}/{$uuid}/{$this->cancelRoute}";
 
         $ch = curl_init($uri);
         curl_setopt_array($ch, [
