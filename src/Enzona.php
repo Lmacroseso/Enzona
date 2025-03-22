@@ -47,19 +47,16 @@ class Enzona
         }
     }
 
-    // Método para confirmar un pago
-    public function confirmPayment($paymentId)
-    {
-        $confirmPayment = new ConfirmPayment($this->accessToken);
-        return $confirmPayment->processConfirmation($paymentId);
-    }
 
-    // Método para cancelar un pago
-    public function cancelPayment($paymentId)
-    {
-        $cancelPayment = new CancelPayment($this->accessToken);
-        return $cancelPayment->processCancellation($paymentId);
+public function cancelPayment($paymentId)
+{
+    try {
+        $cancelPayment = new CancelPayment($this->accessToken, $this->usedHost, $this->apiRoute);
+        return $cancelPayment->cancel($paymentId);
+    } catch (Exception $e) {
+        return ['error' => $e->getMessage()];
     }
+}
 
     // Método para reembolsar un pago
     public function refundPayment($paymentId, $amount)
