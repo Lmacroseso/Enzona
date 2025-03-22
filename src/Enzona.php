@@ -58,12 +58,25 @@ public function cancelPayment($paymentId)
     }
 }
 
-    // Método para reembolsar un pago
-    public function refundPayment($paymentId, $amount)
-    {
-        $refundPayment = new RefundPayment($this->accessToken);
-        return $refundPayment->processRefund($paymentId, $amount);
+    public function completePayment($paymentId)
+{
+    try {
+        $completePayment = new CompletePayment($this->accessToken, $this->usedHost, $this->apiRoute);
+        return $completePayment->complete($paymentId);
+    } catch (Exception $e) {
+        return ['error' => $e->getMessage()];
     }
+}
+
+        public function refundPayment($paymentId, $amount)
+{
+    try {
+        $refundPayment = new RefundPayment($this->accessToken, $this->usedHost, $this->apiRoute);
+        return $refundPayment->refund($paymentId, $amount);
+    } catch (Exception $e) {
+        return ['error' => $e->getMessage()];
+    }
+}
 
     // Método para obtener el token actual
     public function getAccessToken()
