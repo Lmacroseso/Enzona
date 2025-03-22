@@ -20,7 +20,7 @@ class CompletePayment
 
     public function complete($uuid)
     {
-        $uri = "{$this->usedHost}{$this->apiRoute}/{$uuid}/{$this->completeRoute}";
+        $uri = "{$this->usedHost}/{$uuid}/{$this->completeRoute}";
 
         $ch = curl_init($uri);
         curl_setopt_array($ch, [
