@@ -2,6 +2,8 @@
     "name": "lmacroseso/enzona",
     "description": "Pasarela de pago Enzona",
     "version": "1.0.0",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "keywords": [
         "enzona",
         "payment",
