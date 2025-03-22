@@ -16,6 +16,7 @@ class Enzona
     private $apiKey;
     private $apiSecret;
     private $sandBox;
+    private $usedHost = '';
 
     public function __construct()
     {
@@ -25,6 +26,7 @@ class Enzona
         $this->apiKey = config('enzona.api_key');
         $this->apiSecret = config('enzona.api_secret');
         $this->sandBox = config('enzona.sandbox', true);
+        $this->usedHost = ($this->sandBox) ? 'http://api.enzona.net/payment/v1.0.0/payments' : 'http://apisandbox.enzona.net/payment/v1.0.0/payments'
 
         try {
             // Obtener el token de acceso
