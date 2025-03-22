@@ -8,7 +8,6 @@ class CreatePayment
 {
     private $accessToken;
     private $usedHost;
-    private $apiRoute = "/payments"; // Ajustar según la API de Enzona
 
     public function __construct($accessToken, $usedHost)
     {
@@ -50,7 +49,7 @@ class CreatePayment
             $body = json_encode($paymentData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
             // URL de la API de Enzona
-            $uri = $this->usedHost . $this->apiRoute;
+            $uri = $this->usedHost;
 
             // Inicializar cURL
             $ch = curl_init($uri);
