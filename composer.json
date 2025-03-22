@@ -39,6 +39,6 @@
             "echo 'Paquete Lmacroseso/enzona instalado correctamente.'"
         ]
     },
-    "minimum-stability": "1.0.0",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
