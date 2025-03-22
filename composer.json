@@ -2,8 +2,6 @@
     "name": "lmacroseso/enzona",
     "description": "Pasarela de pago Enzona",
     "version": "1.0.0",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "keywords": [
         "enzona",
         "payment",
@@ -30,15 +28,17 @@
         }
     },
     "extra": {
-        "laravel": {
-            "providers": [
-                "Lmacroseso\\Enzona\\EnzonaServiceProvider"
-            ]
-        }
+     "laravel": {
+        "providers": [
+          "Lmacroseso\\Enzona\\EnzonaServiceProvider"
+        ]
+      }
     },
     "scripts": {
         "post-install-cmd": [
             "echo 'Paquete Lmacroseso/enzona instalado correctamente.'"
         ]
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
