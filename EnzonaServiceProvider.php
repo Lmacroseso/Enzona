@@ -1,3 +1,5 @@
+<?php
+
 namespace Lmacroseso\Enzona;
 
 use Illuminate\Support\ServiceProvider;
